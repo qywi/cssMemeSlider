@@ -1,3 +1,4 @@
+/* Основные стили */
 * {
     margin: 0;
     padding: 0;
@@ -7,78 +8,93 @@
 body {
     font-family: Arial, sans-serif;
     background-color: rgb(30, 38, 72);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .slider {
-    width: 80%;
-    margin: 50px auto;
-    position: relative;
+    width: 60%;
+    margin: 5vh auto;
     overflow: hidden;
 }
 
 .slides {
     display: flex;
+    transition: transform 0.5s ease-in-out;
     width: 400%;
-    transition: 0.6s ease-in-out;
 }
 
 .slide {
     width: 100%;
-    position: relative;
 }
 
 .slide img {
-    width: 70%;
+    width: 100%;
     height: auto;
 }
 
 .caption {
-    position: absolute;
-    bottom: 30%;
-    left: 5%;
     color: #fff;
-    font-size: 24px;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px;
+    font-size: 2rem;
+    margin-top: 2rem;
+    text-align: start;
+    width: 100%;
 }
 
 input[type="radio"] {
     display: none;
 }
 
-#slide1:checked ~ .slides {
-    left: 0;
-}
-
-#slide2:checked ~ .slides {
-    left: -100%;
-}
-
-#slide3:checked ~ .slides {
-    left: -200%;
-}
-
-#slide4:checked ~ .slides {
-    left: -300%;
-}
-
 .navigation-manual {
-    position: absolute;
-    width: 100%;
-    bottom: 20%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 2rem;
+    margin-right: -1rem;
 }
 
 .manual-btn {
-    border: 2px solid #fff;
-    padding: 5px;
+    width: 2rem;
+    height: 2rem;
+    border: 0.2rem solid #fff;
     border-radius: 50%;
     cursor: pointer;
     transition: background 0.3s;
-    margin: 0 10px;
+    margin: 0 1rem;
     background: transparent;
+}
+
+#slide1:checked ~ .slides {
+    transform: translateX(0%);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-25%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-50%);
+}
+
+#slide4:checked ~ .slides {
+    transform: translateX(-75%);
+}
+
+#slide1:checked ~ .bottom-slide .slides-text {
+    transform: translateX(0%);
+}
+
+#slide2:checked ~ .bottom-slide .slides-text {
+    transform: translateX(-25%);
+}
+
+#slide3:checked ~ .bottom-slide .slides-text {
+    transform: translateX(-50%);
+}
+
+#slide4:checked ~ .bottom-slide .slides-text {
+    transform: translateX(-75%);
 }
 
 #slide1:checked ~ .navigation-manual label[for="slide1"] {
@@ -97,11 +113,6 @@ input[type="radio"] {
     background: #fff;
 }
 
-.manual-btn {
-    width: 20px;
-    height: 20px;
-}
-
 .manual-btn:hover {
     background: #fff;
 }
@@ -110,7 +121,16 @@ input[type="radio"] {
     background: #ccc;
 }
 
-.manual-btn {
-    cursor: pointer;
+.bottom-slide {
+    display: flex;
 }
 
+.slides-text {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 400%;
+}
+
+.overflow {
+    overflow: hidden;
+}
