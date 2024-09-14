@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(30, 38, 72);
+}
+
+.slider {
+    width: 80%;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 400%;
+    transition: 0.6s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 70%;
+    height: auto;
+}
+
+.caption {
+    position: absolute;
+    bottom: 30%;
+    left: 5%;
+    color: #fff;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#slide1:checked ~ .slides {
+    left: 0;
+}
+
+#slide2:checked ~ .slides {
+    left: -100%;
+}
+
+#slide3:checked ~ .slides {
+    left: -200%;
+}
+
+#slide4:checked ~ .slides {
+    left: -300%;
+}
+
+.navigation-manual {
+    position: absolute;
+    width: 100%;
+    bottom: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.manual-btn {
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 0 10px;
+    background: transparent;
+}
+
+#slide1:checked ~ .navigation-manual label[for="slide1"] {
+    background: #fff;
+}
+
+#slide2:checked ~ .navigation-manual label[for="slide2"] {
+    background: #fff;
+}
+
+#slide3:checked ~ .navigation-manual label[for="slide3"] {
+    background: #fff;
+}
+
+#slide4:checked ~ .navigation-manual label[for="slide4"] {
+    background: #fff;
+}
+
+.manual-btn {
+    width: 20px;
+    height: 20px;
+}
+
+.manual-btn:hover {
+    background: #fff;
+}
+
+.manual-btn:active {
+    background: #ccc;
+}
+
+.manual-btn {
+    cursor: pointer;
+}
+
