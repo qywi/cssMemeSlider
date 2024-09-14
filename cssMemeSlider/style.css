@@ -1,4 +1,3 @@
-/* Основные стили */
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +22,7 @@ body {
 .slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 400%;
+    width: 500%;
 }
 
 .slide {
@@ -70,15 +69,19 @@ input[type="radio"] {
 }
 
 #slide2:checked ~ .slides {
-    transform: translateX(-25%);
+    transform: translateX(-20%);
 }
 
 #slide3:checked ~ .slides {
-    transform: translateX(-50%);
+    transform: translateX(-40%);
 }
 
 #slide4:checked ~ .slides {
-    transform: translateX(-75%);
+    transform: translateX(-60%);
+}
+
+#slide5:checked ~ .slides {
+    transform: translateX(-80%);
 }
 
 #slide1:checked ~ .bottom-slide .slides-text {
@@ -86,15 +89,19 @@ input[type="radio"] {
 }
 
 #slide2:checked ~ .bottom-slide .slides-text {
-    transform: translateX(-25%);
+    transform: translateX(-20%);
 }
 
 #slide3:checked ~ .bottom-slide .slides-text {
-    transform: translateX(-50%);
+    transform: translateX(-40%);
 }
 
 #slide4:checked ~ .bottom-slide .slides-text {
-    transform: translateX(-75%);
+    transform: translateX(-60%);
+}
+
+#slide5:checked ~ .bottom-slide .slides-text {
+    transform: translateX(-80%);
 }
 
 #slide1:checked ~ .navigation-manual label[for="slide1"] {
@@ -113,6 +120,10 @@ input[type="radio"] {
     background: #fff;
 }
 
+#slide5:checked ~ .navigation-manual label[for="slide5"] {
+    background: #fff;
+}
+
 .manual-btn:hover {
     background: #fff;
 }
@@ -128,7 +139,7 @@ input[type="radio"] {
 .slides-text {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 400%;
+    width: 500%;
 }
 
 .overflow {
