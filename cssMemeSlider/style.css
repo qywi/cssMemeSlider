@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(30, 38, 72);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.slider {
+    width: 60%;
+    margin: 5vh auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 500%;
+}
+
+.slide {
+    width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+.caption {
+    color: #fff;
+    font-size: 2rem;
+    margin-top: 2rem;
+    text-align: start;
+    width: 100%;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.navigation-manual {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-right: -1rem;
+    position: relative;
+}
+
+.manual-btn {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 0 1rem;
+}
+
+#slide1:checked ~ .slides {
+    transform: translateX(0%);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-20%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-40%);
+}
+
+#slide4:checked ~ .slides {
+    transform: translateX(-60%);
+}
+
+#slide5:checked ~ .slides {
+    transform: translateX(-80%);
+}
+
+#slide1:checked ~ .bottom-slide .slides-text {
+    transform: translateX(0%);
+}
+
+#slide2:checked ~ .bottom-slide .slides-text {
+    transform: translateX(-20%);
+}
+
+#slide3:checked ~ .bottom-slide .slides-text {
+    transform: translateX(-40%);
+}
+
+#slide4:checked ~ .bottom-slide .slides-text {
+    transform: translateX(-60%);
+}
+
+#slide5:checked ~ .bottom-slide .slides-text {
+    transform: translateX(-80%);
+}
+
+#slide1:checked ~ .bottom-slide .navigation-manual label[for="slide1"] {
+    background: #fff;
+}
+
+#slide2:checked ~ .bottom-slide .navigation-manual label[for="slide2"] {
+    background: #fff;
+}
+
+#slide3:checked ~ .bottom-slide .navigation-manual label[for="slide3"] {
+    background: #fff;
+}
+
+#slide4:checked ~ .bottom-slide .navigation-manual label[for="slide4"] {
+    background: #fff;
+}
+
+#slide5:checked ~ .bottom-slide .navigation-manual label[for="slide5"] {
+    background: #fff;
+}
+
+.navigation-manual label {
+    background: transparent; 
+    border: 0.2rem solid #fff; 
+}
+
+.manual-btn:hover {
+    background: #fff;
+}
+
+.manual-btn:active {
+    background: #ccc;
+}
+
+.bottom-slide {
+    display: flex;
+}
+
+.slides-text {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 500%;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+@media (max-width: 768px)  {
+    .bottom-slide {
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+    
+    .navigation-manual {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .manual-btn {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 0 0.5rem;
+    }
+}
